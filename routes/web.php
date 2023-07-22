@@ -17,19 +17,20 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-
-    return view('posts', [
-        'posts' => POST::all()
-    ]);
-
-
-
+    return view('posts');
 });
 
-Route::get('/posts/{number}', function ($id) {
+Route::get('post/{slug}', function ($slug) {
 
-    return view('post', [
-        'post' => POST::findOrFail($id)
-    ]);
+    $postPath = __DIR__ . "/../resources/posts/$slug";
 
-})->whereNumber('number');
+    if(file_exists($postPath)){
+        return view('post', [
+            'post' => file_get_contents($postPath)
+        ]);
+    }else{
+        return redirect('/');
+    }
+   
+});
+

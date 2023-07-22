@@ -1,12 +1,36 @@
-@php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>article</title>
+    <link rel="stylesheet" href="../app.css">
+</head>
+<body>
+ 
+   
+        {!! $post !!}
+ 
 
-use App\Models\Team;
+</body>
+</html>
 
-@endphp
 
-<x-layout>
+
+
+
+
+
+
+
+{{-- <x-layout>
+
+    <x-slot name='title'>Posts Page </x-slot>
 
     <x-slot name='firstInsert'>
+
+        @foreach ($posts as $post)
 
         <article>
             <h1>{{ $post->username }}</h1>
@@ -14,19 +38,8 @@ use App\Models\Team;
             <p>{{ $post->body }}</p>
         </article>
 
+        @endforeach
+
     </x-slot>
 
-</x-layout>
-
-@php
-
-    $liverpol = new Team('Liverpool', 'England');
-
-    echo $liverpol->introduce();
-    echo $liverpol->country;
-
-@endphp
-
-<?= '<br><br>' ?>
-<?= '<br><br>' ?>
-<?= 'hello' ?>
+</x-layout> --}}
