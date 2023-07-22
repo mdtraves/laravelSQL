@@ -3,25 +3,13 @@
 
         @foreach ($posts as $post)
 
-        {!! $post !!} 
-    
+        <article>
+            <h1>{{ $post->username }}</h1>
+            <p>{{ $post->excerpt }}</p>
+            <p>{{ $post->body }}</p>
+        </article>
+
         @endforeach
 
-
     </x-slot>
-    <x-slot name='secondInsert'>
-
-        @foreach ($posts as $post)
-        
-        {!! "im in the 2nd one" !!} 
-        {{ $loop->iteration }} 
-        <x-button class="">
-            button
-        </x-button>
-    
-        @endforeach
-
-
-    </x-slot>
-    
 </x-layout>

@@ -19,17 +19,17 @@ use App\Models\Post;
 Route::get('/', function () {
 
     return view('posts', [
-        'posts' => POST::index()
+        'posts' => POST::all()
     ]);
 
 
 
 });
 
-Route::get('/posts/{number}', function ($number) {
+Route::get('/posts/{number}', function ($id) {
 
     return view('post', [
-        'post' => POST::find($number)
+        'post' => POST::findOrFail($id)
     ]);
 
 })->whereNumber('number');

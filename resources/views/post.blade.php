@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Post</title>
-</head>
-<body>
-    
-    <?= $post; ?>
- 
-</body>
-</html>
+@php
+
+use App\Models\Team;
+
+@endphp
+
+<x-layout>
+
+    <x-slot name='firstInsert'>
+
+        <article>
+            <h1>{{ $post->username }}</h1>
+            <p>{{ $post->excerpt }}</p>
+            <p>{{ $post->body }}</p>
+        </article>
+
+    </x-slot>
+
+</x-layout>
+
+@php
+
+    $liverpol = new Team('Liverpool', 'England');
+
+    echo $liverpol->introduce();
+    echo $liverpol->country;
+
+@endphp
+
+<?= '<br><br>' ?>
+<?= '<br><br>' ?>
+<?= 'hello' ?>

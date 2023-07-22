@@ -8,7 +8,6 @@
 </head>
 <body>
    {{ $firstInsert }}
-   {{ $secondInsert }}
 
    <x-button>
     button
